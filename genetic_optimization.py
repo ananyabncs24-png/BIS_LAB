@@ -1,9 +1,6 @@
 import random
 
-# ==========================================
-# 1. NETWORK TOPOLOGY (Adjacency Matrix)
-# ==========================================
-# INF means no direct link exists. Numbers represent latency/cost between routers.
+
 INF = float('inf')
 
 network = [
@@ -22,10 +19,6 @@ POPULATION_SIZE = 10
 GENERATIONS = 20
 MUTATION_RATE = 0.2
 
-
-# ==========================================
-# 2. HELPER FUNCTIONS
-# ==========================================
 
 def get_neighbors(node):
     """Finds all directly connected routers to a given node."""
@@ -71,10 +64,6 @@ def calculate_fitness(path):
     cost = calculate_cost(path)
     return 1.0 / cost if cost > 0 else 0
 
-
-# ==========================================
-# 3. GENETIC OPERATORS
-# ==========================================
 
 def select_parent(population, fitnesses):
     """Selects a parent path using Roulette Wheel Selection."""
